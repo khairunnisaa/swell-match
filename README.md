@@ -7,13 +7,13 @@ This project is built using React.js framework Next.js combined with Next UI com
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/khairunnisaa/palmcode-frontend.git
+   git clone https://github.com/khairunnisaa/swell-match.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd palmcode-frontend
+   cd swell-match
    ```
 
 3. Install dependencies:
