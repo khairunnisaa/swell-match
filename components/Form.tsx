@@ -166,10 +166,10 @@ export default function Form() {
                               // Check if the file is an image and has an allowed extension
                               if (fileExtension && allowedImageExtensions.includes(fileExtension)) {
                                   // Perform API call to create a booking
-                                  const { data, status } = await postApiData({ endPoint: 'bookings', dataBody: dataBody });
+                                  const { data, success } = await postApiData({ endPoint: 'bookings', dataBody: dataBody });
 
                                   // Handle successful booking creation
-                                  if (status == 200 || status == 201) {
+                                  if (success) {
                                       // Show success message
                                       const Toast = Swal.mixin({
                                           toast: true,
