@@ -189,6 +189,7 @@ export default function Form() {
 
                                       // Update state with booking data
                                       setDataBooking(data);
+                                      console.log("data booking success",data)
 
                                       // Proceed to the next step
                                       setCurrentStep(currentStep + 1);

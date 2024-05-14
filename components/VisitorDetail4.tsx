@@ -7,22 +7,6 @@ export default function VisitorDetail2({
 }:{
     dataBooking:any
 }) {
-
-    const [dataCountry, setDataCountry] = useState<any>({})
-    useEffect(() => {
-        const getCountry = async () => {
-            try {
-                const {data, status} = await getApiData({endPoint : `countries/${dataBooking?.member?.country_id}`})
-                if(status == 200){
-                    setDataCountry(data)
-                }
-            } catch (error) {
-
-            }
-        }
-        getCountry()
-    }, [dataBooking])
-
     return (
         <>
             <h1 className='mb-5 text-5xl bodoni-moda'>Thank you, {dataBooking?.member?.name}</h1>
@@ -38,12 +22,12 @@ export default function VisitorDetail2({
                     <p className="flex items-center gap-2 text-lg">
                         <Image
                             className="w-5 h-5"
-                            src={dataCountry?.icon_name}
+                            src={dataBooking?.country?.flag_url}
                             width={10}
                             height={10}
                             alt="flag icon"
                         />
-                        {dataCountry?.country_name}
+                        {dataBooking?.country?.name}
                     </p>
                 </div>
                 <div>
@@ -52,7 +36,7 @@ export default function VisitorDetail2({
                 </div>
                 <div>
                     <p className="text-base text-gray-400">Visit date:</p>
-                    <p className="text-lg">{dataBooking?.surfing_booking?.visit_date}</p>
+                    <p className="text-lg">{dataBooking?.visit_date}</p>
                 </div>
             </div>
             <p className="mb-20 inter">We look forward to seeing you at the #Swellmatch store! <br></br> Your booking details already sent to your email and whatsapp</p>
